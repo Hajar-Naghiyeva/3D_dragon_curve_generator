@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<!-- 
+    CSCI 2408 Computer Graphics Fall 2023 
+    (c)2023 by Hajar Naghiyeva 
+    Submitted in partial fulfillment of the requirements of the course.
+-->
+<html lang="en">
+<head>
+    <title>Homework 2 - Working with 3D models</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 800px; /* Set a max-width for larger screens */
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+        }
+        .input-wrapper {
+            width: 100%;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="number"], input[type="text"] {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: calc(100% - 22px); /* Adjust for padding and border */
+        }
+        input[type="submit"] {
+            background-color: #0056b3;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+        input[type="submit"]:hover {
+            background-color: #004494;
+        }
+        .video-wrapper {
+            margin-top: 20px;
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            padding-top: 25px;
+            height: 0;
+        }
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>3D Dragon Curve Generator</h1>
+        <form id="parameters-form">
+            <div class="input-wrapper">
+                <label for="iterations">Choose Number of Iterations:</label>
+                <input type="number" id="iterations" name="iterations" min="1" max="15" value="13" required>
+            </div>
+            <div class="input-wrapper">
+                <label for="height">Set Height Value (Depth for 3D effect):</label>
+                <input type="number" id="height" name="height" step="0.1" value="0.5" required>
+            </div>
+            <div class="input-wrapper">
+                <label for="filename">Define File Name:</label>
+                <input type="text" id="filename" name="filename" required>
+            </div>
+            <input type="submit" value="Generate OBJ File for Dragon Curve">
+        </form>
+        
+        <!-- Video Embedding -->
+        <div class="video-wrapper">
+        
+            <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2F100009315760596%2Fvideos%2F251222237690545%2F&show_text"
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+            </iframe>
+
+        </div>
+        
+    </div>
+    <script src="dragon.js"></script>
+</body>
+</html>
